@@ -1,35 +1,42 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle, setmyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
+    // const [myStyle, setmyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [btntext, setbtnText] = useState("Enable Dark Mode")
+    // const [btntext, setbtnText] = useState("Enable Dark Mode")
 
-    const toggleStyle = () => {
-        if (myStyle.color === 'black') {
-            setmyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white'
-            })
-            setbtnText("Enable Light Mode")
-        } else {
-            setmyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setbtnText("Enable Dark Mode")
-        }
+    let myStyle = {
+        color: props.mode === "dark" ? "white" : "#042743",
+        backgroundColor: props.mode === "dark" ? "#042743" : "white",
+        border: '2px solid',
+        borderColor: props.mode === "dark" ? "white" : "#042743"
     }
+
+    // const toggleStyle = () => {
+    //     if (myStyle.color === 'black') {
+    //         setmyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border: '1px solid white'
+    //         })
+    //         setbtnText("Enable Light Mode")
+    //     } else {
+    //         setmyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setbtnText("Enable Dark Mode")
+    //     }
+    // }
 
     return (
         <div className="container" style={myStyle}>
 
-            <h1 className="my-2"> About Us</h1>
+            <h1 className="my-2">About Us</h1>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -68,9 +75,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="container my-3">
+            {/* <div className="container my-3">
                 <button onClick={toggleStyle} type="button" className="btn btn-primary">{btntext}</button>
-            </div>
+            </div> */}
         </div>
     )
 }
