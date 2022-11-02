@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 export default function Navbar(props) {
@@ -45,5 +45,5 @@ Navbar.propTypes = {
 
 Navbar.defaultProps = {
     title: " set title is here",
-    aboutText: "about"
+    aboutText: "About"
 }
